@@ -12,10 +12,11 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts start --watch",
+    "build": "react-scripts build babel src/ -d lib/",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepublish": "yarn run build"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +35,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.13.16",
+    "@babel/preset-flow": "^7.13.13",
+    "flow-bin": "^0.149.0",
+    "flow-typed": "^3.3.1"
   }
 }
