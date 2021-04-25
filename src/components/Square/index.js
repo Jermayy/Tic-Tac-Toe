@@ -1,13 +1,18 @@
 // @flow
 import * as React from 'react';
 
+import Circle from '../Circle';
+import Cross from '../Cross';
+
 type Props = {
     position?: number,
+    value?: string,
 }
 
 
 const Square = ({ 
     position,
+    value
 }: 
 Props ) :React.Node=> {
 const styles={
@@ -28,7 +33,9 @@ return(
 <div
 style={styles.container}
 >
-{position}
+{value === 'Circle' && <Circle /> }
+{value === 'Cross' && <Cross /> }
+{value === 'Empty' && 'Empty'}
 </div>
 )
 }
