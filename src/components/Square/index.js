@@ -1,7 +1,15 @@
 // @flow
 import * as React from 'react';
 
-const Square = ():React.Node=> {
+type Props = {
+    position?: number,
+}
+
+
+const Square = ({ 
+    position,
+}: 
+Props ) :React.Node=> {
 const styles={
 container:{
     width:'200px',
@@ -20,7 +28,7 @@ return(
 <div
 style={styles.container}
 >
-Square
+{position}
 </div>
 )
 }
