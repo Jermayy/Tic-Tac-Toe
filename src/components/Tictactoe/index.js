@@ -4,7 +4,7 @@ import * as React from 'react';
 import Square from '../Square';
 
 const Tictactoe = ():React.Node => {
-        const Empty = 'Emty';
+        const Empty = 'Empty';
         const Circle = 'O';
         const Cross = 'X';
 
