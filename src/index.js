@@ -2,12 +2,12 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Main from './Main';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Main />
   </React.StrictMode>,
   //$FlowIgnore
   document.getElementById('root')
