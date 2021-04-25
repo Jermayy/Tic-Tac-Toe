@@ -7,8 +7,8 @@ const Main = (): React.Node => {
 
 const Styles = {
   container: {
-    width: '100vw',
-    height: '100vh',
+    width: 'auto',
+    height: 'auto',
     display:'flex',
     itemAlign: 'center',
     justifyContent: 'center'
