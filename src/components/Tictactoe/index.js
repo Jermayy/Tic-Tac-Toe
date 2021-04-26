@@ -5,11 +5,11 @@ import Square from '../Square';
 
 const Tictactoe = ():React.Node => {
         const Empty = 'Empty';
-        const Circle = 'O';
-        const Cross = 'X';
+        const Circle = 'Circle';
+        const Cross = 'Cross';
 
         const positions = [
-            Empty, Circle ,Cross,
+            Circle, Circle ,Cross,
             Empty, Empty, Circle,
             Cross, Cross, Empty
         ]
