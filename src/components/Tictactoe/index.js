@@ -2,20 +2,16 @@
 import * as React from 'react';
 
 import Square from '../Square';
+import values from './values';
 
 const Tictactoe = ():React.Node => {
-
-        const Empty = 'Empty';
-        const Circle = 'Circle';
-        const Cross = 'Cross';
-
         
     const [state, setState] = React.useState({
-   player: Circle,
+   player: values.Circle,
    positions:[
-            Empty, Empty, Empty,
-            Empty, Empty, Empty,
-            Empty, Empty, Empty
+            values.Empty, values.Empty, values.Empty,
+            values.Empty, values.Empty, values.Empty,
+            values.Empty, values.Empty, values.Empty
         ],
     });
      
@@ -24,11 +20,10 @@ const Tictactoe = ():React.Node => {
         positions[position] = state.player;
 
         setState({
-            player: state.player === Circle ? Cross : Circle,
+            player: state.player === values.Circle ? values.Cross : values.Circle,
             positions,
         })
     }
-
 
     const styles = {
         grid: {
@@ -39,6 +34,7 @@ const Tictactoe = ():React.Node => {
             backgroundColor: 'lightgrey',
         }
     }
+    
     return(
         <div style={styles.grid}>
             <Square position={0} value ={state.positions[0]} takeTurn={takeTurn}/>
