@@ -4,10 +4,11 @@ import * as React from 'react';
 import Circle from '../Circle';
 import Cross from '../Cross';
 
+
 type Props = {
     position?: number,
     value?: string,
-    takeTurn?: any,
+    takeTurn: any,
 }
 
 
@@ -18,8 +19,8 @@ const Square = ({
 }: 
 Props ) :React.Node=> {
 
-const handleClick = (takeTurn) => {
-    if (value === 'Equity'){
+const handleClick = () => {
+    if (value === 'Empty'){
 takeTurn(position);
     }
         
