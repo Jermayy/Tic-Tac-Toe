@@ -7,24 +7,35 @@ import Cross from '../Cross';
 type Props = {
     position?: number,
     value?: string,
+    takeTurn?: any,
 }
 
 
 const Square = ({ 
     position,
-    value
+    value,
+    takeTurn
 }: 
 Props ) :React.Node=> {
+
+const handleClick = (takeTurn) => {
+    if (value === 'Equity'){
+takeTurn(position);
+    }
+        
+    }
+
 const styles={
 container:{
     width:'200px',
     height:'200px',
-backgroundColor: 'white',
-padding: 0,
-margin: 0,
-display: 'flex',
-alignItems: 'center',
-justifyContent: 'center',
+    backgroundColor: 'white',
+    padding: 0,
+    margin: 0,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
 }
 
 };
@@ -32,10 +43,10 @@ justifyContent: 'center',
 return(
 <div
 style={styles.container}
+onClick={handleClick}
 >
 {value === 'Circle' && <Circle /> }
 {value === 'Cross' && <Cross /> }
-{value === 'Empty' && 'Empty'}
 </div>
 )
 }
