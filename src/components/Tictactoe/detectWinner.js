@@ -2,7 +2,7 @@
 
 
 type Props = {
-    p: Array<[]>,
+    p: [],
 }
 
 const detectWinner = (p:Props): void | string => {
