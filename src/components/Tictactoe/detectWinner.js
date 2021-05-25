@@ -1,38 +1,38 @@
 // @flow
 
-type Props = {
-    p:string[],
-}
+// type Props = {
+//     p:string[],
+// }
 
-const detectWinner = (props:Props): void | string => {
-
-
-if(props.p[0] === 'Circle' && props.p[1] === 'Circle' && props.p[2] === 'Circle') return 'Circle';
-if(props.p[3] === 'Circle' && props.p[4] === 'Circle' && props.p[5] === 'Circle') return 'Circle';
-if(props.p[6] === 'Circle' && props.p[7] === 'Circle' && props.p[8] === 'Circle') return 'Circle';
-
-if(props.p[0] === 'Circle' && props.p[3] === 'Circle' && props.p[6] === 'Circle') return 'Circle';
-if(props.p[1] === 'Circle' && props.p[4] === 'Circle' && props.p[5] === 'Circle') return 'Circle';
-if(props.p[2] === 'Circle' && props.p[5] === 'Circle' && props.p[8] === 'Circle') return 'Circle';
-
-if(props.p[0] === 'Circle' && props.p[4] === 'Circle' && props.p[8] === 'Circle') return 'Circle';
-if(props.p[2] === 'Circle' && props.p[4] === 'Circle' && props.p[6] === 'Circle') return 'Circle';
+const detectWinner = (positions: Array<string>): void | string => {
 
 
-if(props.p[0] === 'Cross' && props.p[1] === 'Cross' && props.p[2] === 'Cross') return 'Cross';
-if(props.p[3] === 'Cross' && props.p[4] === 'Cross' && props.p[5] === 'Cross') return 'Cross';
-if(props.p[6] === 'Cross' && props.p[7] === 'Cross' && props.p[8] === 'Cross') return 'Cross';
+if(positions[0] === 'Circle' && positions[1] === 'Circle' && positions[2] === 'Circle') return 'Circle';
+if(positions[3] === 'Circle' && positions[4] === 'Circle' && positions[5] === 'Circle') return 'Circle';
+if(positions[6] === 'Circle' && positions[7] === 'Circle' && positions[8] === 'Circle') return 'Circle';
 
-if(props.p[0] === 'Cross' && props.p[3] === 'Cross' && props.p[6] === 'Cross') return 'Cross';
-if(props.p[1] === 'Cross' && props.p[4] === 'Cross' && props.p[5] === 'Cross') return 'Cross';
-if(props.p[2] === 'Cross' && props.p[5] === 'Cross' && props.p[8] === 'Cross') return 'Cross';
+if(positions[0] === 'Circle' && positions[3] === 'Circle' && positions[6] === 'Circle') return 'Circle';
+if(positions[1] === 'Circle' && positions[4] === 'Circle' && positions[5] === 'Circle') return 'Circle';
+if(positions[2] === 'Circle' && positions[5] === 'Circle' && positions[8] === 'Circle') return 'Circle';
 
-if(props.p[0] === 'Cross' && props.p[4] === 'Cross' && props.p[8] === 'Cross') return 'Cross';
-if(props.p[2] === 'Cross' && props.p[4] === 'Cross' && props.p[6] === 'Cross') return 'Cross';
+if(positions[0] === 'Circle' && positions[4] === 'Circle' && positions[8] === 'Circle') return 'Circle';
+if(positions[2] === 'Circle' && positions[4] === 'Circle' && positions[6] === 'Circle') return 'Circle';
 
-if( props.p[0] !== 'Empty' && props.p[1] !== 'Empty' && props.p[2] !== 'Empty' &&
-    props.p[3] !== 'Empty' && props.p[4] !== 'Empty' && props.p[5] !== 'Empty' &&
-    props.p[6] !== 'Empty' && props.p[7] !== 'Empty' && props.p[8] !== 'Empty'
+
+if(positions[0] === 'Cross' && positions[1] === 'Cross' && positions[2] === 'Cross') return 'Cross';
+if(positions[3] === 'Cross' && positions[4] === 'Cross' && positions[5] === 'Cross') return 'Cross';
+if(positions[6] === 'Cross' && positions[7] === 'Cross' && positions[8] === 'Cross') return 'Cross';
+
+if(positions[0] === 'Cross' && positions[3] === 'Cross' && positions[6] === 'Cross') return 'Cross';
+if(positions[1] === 'Cross' && positions[4] === 'Cross' && positions[5] === 'Cross') return 'Cross';
+if(positions[2] === 'Cross' && positions[5] === 'Cross' && positions[8] === 'Cross') return 'Cross';
+
+if(positions[0] === 'Cross' && positions[4] === 'Cross' && positions[8] === 'Cross') return 'Cross';
+if(positions[2] === 'Cross' && positions[4] === 'Cross' && positions[6] === 'Cross') return 'Cross';
+
+if( positions[0] !== 'Empty' && positions[1] !== 'Empty' && positions[2] !== 'Empty' &&
+    positions[3] !== 'Empty' && positions[4] !== 'Empty' && positions[5] !== 'Empty' &&
+    positions[6] !== 'Empty' && positions[7] !== 'Empty' && positions[8] !== 'Empty'
 ) return 'Tie';
 
 };

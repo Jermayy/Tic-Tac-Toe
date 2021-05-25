@@ -2,12 +2,14 @@
 import * as React from 'react';
 
 import Square from '../Square';
-// import Result from './Result';
+import Result from './Result';
 import values from './values';
 import detectWinner from './detectWinner';
 
 const Tictactoe = ():React.Node => {
-        
+
+      let winnerResult;
+
     const [state, setState] = React.useState({
    player: values.Circle,
    positions:[
@@ -26,7 +28,7 @@ const Tictactoe = ():React.Node => {
             positions,
         })
 
-    detectWinner(...state.positions)
+      winnerResult = detectWinner([...state.positions]);
     
     }
 
@@ -41,7 +43,7 @@ const Tictactoe = ():React.Node => {
     }
     
     return(
-        <>
+        <div>
         <div style={styles.grid}>
             <Square position={0} value ={state.positions[0]} takeTurn={takeTurn}/>
             <Square position={1} value ={state.positions[1]} takeTurn={takeTurn}/>
@@ -53,9 +55,9 @@ const Tictactoe = ():React.Node => {
             <Square position={7} value ={state.positions[7]} takeTurn={takeTurn}/>
             <Square position={8} value ={state.positions[8]} takeTurn={takeTurn}/>
         </div>
-
-        {/* <Result winner={detectWinner(state.positions)} /> */}
-        </>
+        
+       {winnerResult && <Result winner={winnerResult} />}
+        </div>
     )
 }
 
