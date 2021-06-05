@@ -17,8 +17,7 @@ border: 'solid'
     };
 
     return(
-        <div style={Styles.container} testId='result'>
-        result
+        <div style={Styles.container} data-testid='result'>
             {winner === "Circle" && "Circle Wins!"}
             {winner === "Cross" && "Cross Wins!"}
             {winner === "Tie" && "It's a Tie!"}
