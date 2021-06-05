@@ -1,6 +1,6 @@
-//@flow
+// @flow
 import * as React from 'react';
-import {render} from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import Result from './Result';
 // import detectWinner from './detectWinner';
@@ -19,32 +19,28 @@ import Result from './Result';
 
 // }
 
-
-describe('<Result />', () =>{
-
-it('renders with Circle as winner', () => {
-    const {getByTestId} = render(
-        <Result winner={'Circle'} />
+describe('<Result />', () => {
+  it('renders with Circle as winner', () => {
+    const { getByTestId } = render(
+      <Result winner="Circle" />,
     );
 
-expect (getByTestId('result').textContent).toBe('Circle Wins!')
-})
+    expect(getByTestId('result').textContent).toBe('Circle Wins!');
+  });
 
-
-it('renders with Cross as winner', () => {
-    const {getByTestId} = render(
-        <Result winner={'Cross'} />
+  it('renders with Cross as winner', () => {
+    const { getByTestId } = render(
+      <Result winner="Cross" />,
     );
 
-expect (getByTestId('result').textContent).toBe('Cross Wins!')
-})
-it('renders a tie game', () => {
-    const {getByTestId} = render(
-        <Result winner={'Tie'} />
+    expect(getByTestId('result').textContent).toBe('Cross Wins!');
+  });
+
+  it('renders a tie game', () => {
+    const { getByTestId } = render(
+      <Result winner="Tie" />,
     );
 
-expect (getByTestId('result').textContent).toBe('It\'s a Tie!')
-})
-
-
-})
+    expect(getByTestId('result').textContent).toBe('It\'s a Tie!');
+  });
+});

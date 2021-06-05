@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import { range } from 'lodash';
 
 import Square from '../Square';
 import Result from './Result';
@@ -7,58 +8,62 @@ import values from './values';
 import detectWinner from './detectWinner';
 
 const Tictactoe = ():React.Node => {
+  const [winnerResult, setWinnerResult] = React.useState();
 
-      let winnerResult;
+  const [state, setState] = React.useState({
+    player: values.Circle,
+    positions: [
+      values.Empty, values.Empty, values.Empty,
+      values.Empty, values.Empty, values.Empty,
+      values.Empty, values.Empty, values.Empty,
+    ],
+  });
 
-    const [state, setState] = React.useState({
-   player: values.Circle,
-   positions:[
-            values.Empty, values.Empty, values.Empty,
-            values.Empty, values.Empty, values.Empty,
-            values.Empty, values.Empty, values.Empty
-        ],
-    });
-     
-    const takeTurn = (position) => {
-        const positions = [...state.positions];
-        positions[position] = state.player;
+  React.useEffect(() => {
+    setWinnerResult(detectWinner([...state.positions]));
+  }, [state]);
 
-        setState({
-            player: state.player === values.Circle ? values.Cross : values.Circle,
-            positions,
-        })
+  const takeTurn = (position) => {
+    const positions = [...state.positions];
+    positions[position] = state.player;
 
-      winnerResult = detectWinner([...state.positions]);
-    
-    }
+    const newState = {
+      player: state.player === values.Circle ? values.Cross : values.Circle,
+      positions,
+    };
 
-    const styles = {
-        grid: {
-            display: 'grid',
-            gridTemplateColumns: 'auto auto auto',
-            gridTemplateRows: 'auto auto auto',
-            gap: '10px',
-            backgroundColor: 'lightgrey',
-        }
-    }
-    
-    return(
-        <div>
-        <div style={styles.grid}>
-            <Square position={0} value ={state.positions[0]} takeTurn={takeTurn}/>
-            <Square position={1} value ={state.positions[1]} takeTurn={takeTurn}/>
-            <Square position={2} value ={state.positions[2]} takeTurn={takeTurn}/>
-            <Square position={3} value ={state.positions[3]} takeTurn={takeTurn}/>
-            <Square position={4} value ={state.positions[4]} takeTurn={takeTurn}/>
-            <Square position={5} value ={state.positions[5]} takeTurn={takeTurn}/>
-            <Square position={6} value ={state.positions[6]} takeTurn={takeTurn}/>
-            <Square position={7} value ={state.positions[7]} takeTurn={takeTurn}/>
-            <Square position={8} value ={state.positions[8]} takeTurn={takeTurn}/>
-        </div>
-        
-       {winnerResult && <Result winner={winnerResult} />}
-        </div>
-    )
-}
+    setState(newState);
+
+    //    setWinnerResult(detectWinner([...newState.positions]));
+  };
+
+  const styles = {
+    grid: {
+      display: 'grid',
+      gridTemplateColumns: 'auto auto auto',
+      gridTemplateRows: 'auto auto auto',
+      gap: '10px',
+      backgroundColor: 'lightgrey',
+    },
+  };
+
+  return (
+    <div>
+      <div style={styles.grid}>
+        {range(0, 9).map((o) => (
+          <Square
+            key={o}
+            position={o}
+            value={state.positions[o]}
+            takeTurn={takeTurn}
+            disabled={!!winnerResult}
+          />
+        ))}
+      </div>
+
+      {winnerResult && <Result winner={winnerResult} />}
+    </div>
+  );
+};
 
 export default Tictactoe;

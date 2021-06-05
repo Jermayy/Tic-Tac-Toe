@@ -4,24 +4,22 @@ import Tictactoe from './components/Tictactoe';
 import './App.css';
 
 const Main = (): React.Node => {
-
-const Styles = {
-  container: {
-    width: 'auto',
-    height: 'auto',
-    display:'flex',
-    itemAlign: 'center',
-    justifyContent: 'center'
-  }
-}
+  const Styles = {
+    container: {
+      width: 'auto',
+      height: 'auto',
+      display: 'flex',
+      itemAlign: 'center',
+      justifyContent: 'center',
+    },
+  };
 
   return (
     <div style={Styles.container}>
-    
-        <Tictactoe/>
-       </div>
-       
+      <Tictactoe />
+    </div>
+
   );
-}
+};
 
 export default Main;
