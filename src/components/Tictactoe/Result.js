@@ -23,7 +23,6 @@ const Result = ({ winner }: Props):React.Node => {
       padding: '20px',
       fontWeight: '700',
     },
-
   };
 
   return (
@@ -35,7 +34,6 @@ const Result = ({ winner }: Props):React.Node => {
       </div>
       <button type="button" onClick={() => { window.location.reload(); }} style={Styles.button}> Reset Game</button>
     </div>
-
   );
 };
 

@@ -33,8 +33,6 @@ const Tictactoe = ():React.Node => {
     };
 
     setState(newState);
-
-    //    setWinnerResult(detectWinner([...newState.positions]));
   };
 
   const styles = {
@@ -60,7 +58,6 @@ const Tictactoe = ():React.Node => {
           />
         ))}
       </div>
-
       {winnerResult && <Result winner={winnerResult} />}
     </div>
   );

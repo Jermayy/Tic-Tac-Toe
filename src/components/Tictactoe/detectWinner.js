@@ -1,9 +1,5 @@
 // @flow
 
-// type Props = {
-//     p:string[],
-// }
-
 const detectWinner = (positions: Array<string>): void | string => {
   if (positions[0] === 'Circle' && positions[1] === 'Circle' && positions[2] === 'Circle') return 'Circle';
   if (positions[3] === 'Circle' && positions[4] === 'Circle' && positions[5] === 'Circle') return 'Circle';
