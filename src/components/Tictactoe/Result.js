@@ -16,10 +16,14 @@ const Result = ({ winner }: Props):React.Node => {
 
   return (
     <div style={Styles.container} data-testid="result">
-      {winner === 'Circle' && 'Circle Wins!'}
-      {winner === 'Cross' && 'Cross Wins!'}
-      {winner === 'Tie' && "It's a Tie!"}
+      <div>
+        {winner === 'Circle' && 'Circle Wins!'}
+        {winner === 'Cross' && 'Cross Wins!'}
+        {winner === 'Tie' && "It's a Tie!"}
+      </div>
+      <button type="button" onClick={() => { window.location.reload(); }}> Reset Game</button>
     </div>
+
   );
 };
 
