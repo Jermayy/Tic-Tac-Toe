@@ -19,7 +19,7 @@ Within the Terminal type "yarn" to install dependencies to run application on yo
 ## Usage:
 to run the application locally type "yarn start" into your Terminal. Alternatively a live deployed version of the application can be accessed here: 
 
-![](Screenshot 2021-07-19 at 21.02.12.png)
+![](./Screenshots/screen1.png)
 
 
 ## License Details:  
