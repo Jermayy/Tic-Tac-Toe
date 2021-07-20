@@ -2,6 +2,7 @@
   "name": "tic-tac-toe",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jermayy.github.io/Tic-Tac-Toe/",
   "dependencies": {
     "@octokit/core": "^3.5.1",
     "@testing-library/dom": "^8.1.0",
@@ -21,7 +22,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepublish": "yarn run build",
-    "deploy": "gh-pages-deploy"
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": [
