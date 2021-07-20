@@ -20,7 +20,8 @@
     "build": "react-scripts build babel src/ -d lib/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepublish": "yarn run build"
+    "prepublish": "yarn run build",
+    "deploy": "gh-pages-deploy"
   },
   "eslintConfig": {
     "extends": [
@@ -55,6 +56,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^1.7.0",
     "flow-bin": "^0.149.0",
-    "flow-typed": "^3.3.1"
+    "flow-typed": "^3.3.1",
+    "gh-pages": "^3.2.3"
   }
 }
